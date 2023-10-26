@@ -19,7 +19,7 @@ class ControllerDB {
             if (tmp.length != 0) {
                 this.db = JSON.parse(tmp)
             }
-            
+
         }
         catch (error) {
             console.warn(error)
@@ -40,7 +40,7 @@ class ControllerDB {
     }
 
     findUser(userName) {
-        let result = this.db.filter((e) => e.user == userName)
+        let result = this.db.filter((e) => e.user.toLowerCase() == userName.toLowerCase())
         if (result != '')
             console.log(`User ${userName} was found \n`, result);
         else {
